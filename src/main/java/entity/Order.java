@@ -28,7 +28,6 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)
@@ -37,12 +36,12 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(User user) {
+    public Order(int id, User user) {
+        this.id = id;
         this.user = user;
     }
 
-    public Order(int id, User user) {
-        this.id = id;
+    public Order(User user) {
         this.user = user;
     }
 
@@ -54,17 +53,17 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Entitys.Order[ id=" + id + " ]";
-    }
-
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    @Override
+    public String toString() {
+        return "Entitys.Order[ id=" + id + " ]";
     }
 
     public List<Vehicle> getVehicle() {
