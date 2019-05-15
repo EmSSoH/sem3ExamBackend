@@ -11,8 +11,10 @@ public class SetupTestUsers {
 
     public static void main(String[] args) {
 
+        
+        
         EntityManager em = PuSelector.getEntityManagerFactory("pu").createEntityManager();
-
+        
         // IMPORTAAAAAAAAAANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         // This breaks one of the MOST fundamental security rules in that it ships with default users and passwords
         // CHANGE the three passwords below, before you uncomment and execute the code below

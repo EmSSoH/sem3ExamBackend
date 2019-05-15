@@ -28,6 +28,7 @@ public class Order implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)
